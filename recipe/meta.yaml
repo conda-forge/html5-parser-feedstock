@@ -11,7 +11,7 @@ source:
     - 0000-no-build-test.diff
 
 build:
-  number: 0
+  number: 1
   # segfault
   skip: true  # [win and py<310]
 
