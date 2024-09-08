@@ -13,8 +13,7 @@ source:
 build:
   number: 2
   # segfault
-  skip: true  # [win and py<310]
-  skip: true  # [python_impl == 'pypy']
+  skip: true  # [win and py<310 or python_impl == 'pypy']
 
 requirements:
   build:
@@ -26,6 +25,7 @@ requirements:
     - libxml2
     - pip
     - python
+    - setuptools
   run:
     - chardet
     - lxml >=3.8.0
@@ -40,7 +40,7 @@ test:
     - beautifulsoup4
     - coverage
     - pip
-    - pytest
+    - pytest <8
 
 about:
   home: https://html5-parser.readthedocs.io
