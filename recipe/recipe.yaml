@@ -24,6 +24,12 @@ requirements:
     - ${{ compiler("c") }}
     - ${{ stdlib("c") }}
     - pkg-config
+    - if: build_platform != target_platform
+      then:
+        - cross-python_${{ target_platform }}
+        - crossenv
+        - libxml2
+        - python
   host:
     - libxml2
     - pip
