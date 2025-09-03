@@ -5,7 +5,15 @@ from pathlib import Path
 WIN = sys.platform.startswith("win")
 
 TESTS = Path("test").rglob("*.py")
-PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long", "-k", "not (memleak or soup_leak)", *TESTS]
+PYTEST = [
+    "pytest",
+    "-vv",
+    "--color=yes",
+    "--tb=long",
+    "-k",
+    "not (memleak or soup_leak)",
+    *TESTS,
+]
 
 
 def do(*args):
@@ -15,6 +23,7 @@ def do(*args):
     if rc:
         sys.exit(rc)
     return rc
+
 
 if __name__ == "__main__":
     if WIN:

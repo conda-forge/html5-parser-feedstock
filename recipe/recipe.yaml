@@ -16,6 +16,8 @@ source:
 
 build:
   number: 3
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   build:
