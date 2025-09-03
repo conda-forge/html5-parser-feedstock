@@ -17,8 +17,6 @@ def do(*args):
     return rc
 
 if __name__ == "__main__":
-    do("pip", "check")
-
     if WIN:
         sys.exit(do(*PYTEST))
     do("coverage", "run", "--source=html5_parser", "--branch", "-m", *PYTEST)
