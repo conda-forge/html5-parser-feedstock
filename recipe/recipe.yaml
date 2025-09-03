@@ -44,6 +44,8 @@ tests:
         - beautifulsoup4
         - coverage
         - pytest <8
+    script:
+      file: run_test.py
 
 about:
   summary: Fast C based HTML 5 parsing for python
